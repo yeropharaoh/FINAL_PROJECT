@@ -13,6 +13,17 @@ margin:0;
 padding: 0;
 }
 
+#login, #loggedin {
+        display: none;
+      }
+
+.text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 500px;
+}
+
 #imageholder img{
 	width: 50%;
 	height: 50%;

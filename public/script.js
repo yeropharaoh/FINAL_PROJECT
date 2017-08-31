@@ -2,16 +2,15 @@
 // const rapid = new RapidAPI('EmotionSpotify', '#########################');
 const RapidAPI = new require('rapidapi-connect');
 const rapid = new RapidAPI('default-application_59a545c8e4b0b28ab0e673f6', '16d6951d-b034-48d5-8bc7-4483efa39522');
-let open = require('open');
 
-// let imageUrl = process.argv[2];
+let imageUrl = getElementById('imageinput');
 
 
 rapid.call('MicrosoftEmotionAPI', 'getEmotionRecognition', { 
   'subscriptionKey': '5ce0c73656fb4464a91deee1e69a1939',
   // 'image': 'fakepath\file'
-  image': 'http://www.goldenglobes.com/sites/default/files/styles/portrait_medium/public/people/cover_images/leonardo_dicaprio-gt.jpg?itok=uZBLZv3X'
-  // 'image': imageUrl
+  // image': 'http://www.goldenglobes.com/sites/default/files/styles/portrait_medium/public/people/cover_images/leonardo_dicaprio-gt.jpg?itok=uZBLZv3X'
+  'image': imageUrl
 
 }).on('success', (payload) => {
   // The MicrosoftEmotionAPI returns a confidence score for happiness, sadness, surprise, anger, fear, contempt, disgust or neutral.
@@ -41,7 +40,7 @@ rapid.call('SpotifyPublicAPI', 'searchPlaylists', {
   }).on('success', (payload) => {
      // A JSON object is returned containing information about the playlist including the name, URL, and owner.
      // Here I have grabbed the playlist's URL and opened it in the browser using the npm package "open"
-	   open(payload.playlists.items[0].external_urls.spotify);
+	   (payload.playlists.items[0].external_urls.spotify);
   }).on('error', (payload) => {
 	   console.log("Spotify Playlist Query Error");
   });

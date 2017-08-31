@@ -4,22 +4,9 @@ html
 			include ../style.css
 		link(rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
 	body
-		.container1
-			h4.header something!
-			input#imageinput(type="url" name='imagelink' placeholder='insert your image URL link' ) 
-			button.btn.btn-default#submitbutton(type="submit", name="submit") paste your image link here
-
-			div(name='image' id='imageholder')
-
-			//- jQuery
-		script(src='https://code.jquery.com/jquery-3.2.1.min.js')
-
-		script.
-			$('#submitbutton').on('click', function(){
-			console.log('something')
-			var image = $('#imageinput').val()
-				$.post('/search', { imageurl: image }, (result) => {
-				//- console.log(result)
-					$('#imageholder').html('<img src="' + result.image + '" />')
-				});
-			});
+		.container
+			div(id="login")
+        	<h1>Login to ur spotify</h1>
+        	a.btn.btn-primary(href='/emoplaylist') Log in with Spotify
+     
+			
