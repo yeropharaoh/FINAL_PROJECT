@@ -29,7 +29,7 @@ html
 			.container1.col.s5.offset-s3
 				h4.header.col.s12.light Welcome to Spot-I-See! 
 					br
-					| Brought to you by Microsoft's Emotion API + Spotify's API
+					| Brought to you by Microsoft's Emotion API + Spotify's API(temporarily replaced by Youtube)
 				h7 paste an image link of a person's face below and we'll pick the right playlist that suits their emotion!
 				br
 				br
@@ -41,8 +41,7 @@ html
 								
 
 			div(name='image' id='imageholder')
-				#emotionresult
-					h4 the strongest emotion is... !
+				
 			div(name='spotify' id='spotifyholder') 
 
 
@@ -53,7 +52,7 @@ html
 		//- 	include ../public/script.js
 		
 		script.
-			$('#emotionresult').hide()
+			
 
 			$('#submitbutton1').on('click', function(){
 			console.log('something')
@@ -75,9 +74,30 @@ html
 				$.post('/search', { imageurl: image, access_token: token}, (result) => {
 				console.log(result)
 					getPlaylist(result);
-					$('#imageholder').html('<img src="' + result.image + '" />' + '<h2 style="color: white">THE STRONGEST EMOTION IS..... ' + result.emotion + '</h2>')
+					$('#imageholder').html('<img src="' + result.image + '" />' + '<h4 style="color: white">THE STRONGEST EMOTION IS..... ' + result.emotion + '</h4>')
+					if(result.emotion === "neutral") {
+						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/lSU1eFxgr68" frameborder="0" allowfullscreen></iframe>')
+					}
+					if(result.emotion === "sadness") {
+						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/xzILUpaTtbc" frameborder="0" allowfullscreen></iframe>')
+					}
 					if(result.emotion === "happiness") {
-						$('#spotifyholder').html('<iframe height="400", width="600" src="' + 'https://www.youtube.com/watch?v=y6Sxv-sUYtM' + '"></iframe>')
+						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/mOQ2ygK47Cs" frameborder="0" allowfullscreen></iframe>') 
+					}
+					if(result.emotion === "anger") {
+						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/1qKS51qh4OY" frameborder="0" allowfullscreen></iframe>') 
+					}
+					if(result.emotion === "fear") {
+						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/mlTRcMowLkc" frameborder="0" allowfullscreen></iframe>') 
+					}
+					if(result.emotion === "surprise") {
+						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/Wp0a_xxttyA" frameborder="0" allowfullscreen></iframe>') 
+					}
+					if(result.emotion === "contempt") {
+						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/E_lpOJRIKgE" frameborder="0" allowfullscreen></iframe>') 
+					}
+					if(result.emotion === "disgust") {
+						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/ZGnfxUGGWr0" frameborder="0" allowfullscreen></iframe>') 
 					}
 
 					
