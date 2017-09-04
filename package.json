@@ -10,8 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.4",
+    "express-fileupload": "^0.2.0",
     "open": "0.0.5",
-    "rapidapi-connect": "0.0.6"
+    "querystring": "^0.2.0",
+    "rapidapi-connect": "0.0.6",
+    "request": "^2.81.0"
   }
 }

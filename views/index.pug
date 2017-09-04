@@ -2,11 +2,34 @@ html
 	head
 		style
 			include ../style.css
-		link(rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css')
+
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 	body
-		.container
-			div(id="login")
-        	<h1>Login to ur spotify</h1>
-        	a.btn.btn-primary(href='/emoplaylist') Log in with Spotify
-     
+		header
+			.navbar-fixed
+					nav
+						.nav-wrapper.white.darken-3
+							a.brand-logo(href='/') 
+								img(src='https://image.ibb.co/kmB6xQ/logo4.png', style='width: 86%')
+
+		.main-container
+			.container-login
+				div(id="login")
+					h1 Music-Related-Thing
+					h7 it's fun. its music-related. it uses javascript and stuff. 
+					br
+					br
+					br
+					br
+					a.btn.btn-primary#loginbtn(href='/login') Log in with Spotify to have some fun!
+			.container-logo
+				div(id="logo")
+					//- h4 logo
+
+		.container-bottom
+			div(id="bottom")
+				h8.center-align in cooperation with Noer & Lloyd ©2017
+
+		 
 			

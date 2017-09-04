@@ -1,0 +1,60 @@
+html
+	head
+		style
+			include ../style.css
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css')
+
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+	body
+		header
+			.navbar-fixed
+					nav
+						.nav-wrapper.white.darken-3
+							a.brand-logo(href='/') 
+								img(src='https://image.ibb.co/kmB6xQ/logo4.png', style='width: 86%')
+
+								ul#nav-mobile.right.hide-on-med-and-down
+									li
+										a.btn.purple.darken-4(href="/") Home
+										a.btn.purple.darken-4(href="/emoplaylist") Spot-I-See
+										a.btn.purple.darken-4(href="/makemusic") Make music
+								ul#nav-mobile.side-nav
+												li
+													a(href='#') Navbar Link
+								|  
+								a.button-collapse(href='#', data-activates='nav-mobile')
+									i.material-icons menu
+
+
+		row.center
+			h4 I made a sick beat! play around with the loops mayne
+			form
+				button#button-loop-1(type='button', value='1')  synth bass
+					img.loopbox(src='synthbass.png')
+					
+				button#button-loop-2(type='button', value='2') beat
+					img.loopbox(src='drum.png')
+				button#button-loop-3(type='button', value='3') perc
+					img#loopbox(src='perc.png')
+				button#button-loop-4(type='button', value='4') plucks
+					img#loopbox(src='plucks.png')
+				button#button-loop-5(type='button', value='5') pad
+					img#loopbox(src='pad.png')
+				button#button-loop-6(type='button', value='6') secret
+					img#loopbox(src='lloyd.png')
+
+			
+
+		//jQuery
+		script(type='text/javascript' src='https://code.jquery.com/jquery-3.2.1.min.js')
+		script
+			include music.js
+		//- /- jQuery
+		script.
+			$(document).ready(function () {
+				$('#button-loop-6').hide()
+
+			$('#button-loop-5').on('click', function ()	{
+				$('#button-loop-6').show()
+			});
+			});

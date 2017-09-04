@@ -13,9 +13,9 @@ margin:0;
 padding: 0;
 }
 
-#login, #loggedin {
+/*#login, #loggedin {
         display: none;
-      }
+      }*/
 
 .text-overflow {
 	overflow: hidden;
@@ -24,7 +24,109 @@ padding: 0;
 	width: 500px;
 }
 
+body {
+	background-color: #261e4c;
+}
+
+.main-container {
+	background-color: #261e4c;
+	height: 100%;
+}
+
+.nav.brand-logo{
+/*	width: 100%;*/
+}
+
+.container-bottom {
+	/*background-color: white;*/
+	background-image: url(https://image.ibb.co/bEA8cQ/musicbkgrnd.png);
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+	height: 190px;
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+	animation: animatedBackground 40s linear infinite;
+}
+
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+	
+/*.container-logo{
+	background-image: url(https://www.shareicon.net/download/2016/03/27/465682_media_256x256.png);
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	margin: 600px;
+}*/
+
+.container-login{
+/*	background-color: white;
+	opacity: 0.5;*/
+/*	width: 600px;*/
+}
+
+#login{
+	color: white;
+	text-align: center;
+	opacity: 1;
+}
+
+#loginbtn{
+
+}
+
+h4{
+	color: white;
+}
+
+h7{
+	color: #FCB148;
+}
+
+h8 {
+color: white;
+font-size: 12;
+}
+
+#bottom{
+	text-align: center;
+}
+
+
+#imageinput{
+	background-color: white;
+	opacity: 0.9;
+	width: 65%;
+}
+
+#imageholder{
+	border-color: #FCB148;
+	 border-radius: 25px;
+    padding: 20px;
+}
+
 #imageholder img{
 	width: 50%;
 	height: 50%;
+}
+
+#loopbox {
+	width: 70px
+	height: 70px;
+}
+
+#button-loop-6{
+	width: 20%;
+	height: 20%;
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+          transition:         transform .8s ease-in-out;
+}
+
+#button-loop-6:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
