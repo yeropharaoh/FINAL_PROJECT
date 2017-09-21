@@ -4,13 +4,12 @@ var audio = {
     buffer: {},
     compatibility: {},
     files: [
-        '/synth.wav',
-        '/beat.wav',
+        '/kick.wav',
+        '/pad.wav',
         '/perc.wav',
         '/keys.wav',
-        '/pad.wav',
-        '/lloyd.wav'
-    ],
+        '/bass.wav'
+        ],
     proceed: true,
     source_loop: {},
     source_once: {}
@@ -148,3 +147,19 @@ if (audio.proceed) {
         audio.compatibility.stop = stop;
     })();
 }; 
+
+//KEYS
+ document.onkeyup=function(e){
+  var e = e || window.event;
+  if(e.which == 65) {
+    $('#button-loop-1').click()
+    } else if(e.which == 83){
+    $('#button-loop-2').click()
+    } else if(e.which == 68){
+    $('#button-loop-3').click()
+    } else if(e.which == 70){
+    $('#button-loop-4').click()
+    } else if(e.which == 71){
+    $('#button-loop-5').click()
+    }
+};

@@ -9,40 +9,52 @@ html
 		header
 			.navbar-fixed
 					nav
-						.nav-wrapper.white.darken-3
+						.nav-wrapper.white.darken-5
 							a.brand-logo(href='/') 
-								img(src='https://image.ibb.co/kmB6xQ/logo4.png', style='width: 86%')
+								img(src='logo4.png', style='width: 88%; padding-left: 20px;')
 
-								ul#nav-mobile.right.hide-on-med-and-down
-									li
-										a.btn.purple.darken-4(href="/") Home
-										a.btn.purple.darken-4(href="/emoplaylist") Spot-I-See
-										a.btn.purple.darken-4(href="/makemusic") Make music
-								ul#nav-mobile.side-nav
-												li
-													a(href='#') Navbar Link
-								|  
-								a.button-collapse(href='#', data-activates='nav-mobile')
-									i.material-icons menu
+							ul#nav-mobile.right.hide-on-med-and-down
+								li
+									a#home.btn.green.lighten-2(href="/") Home 
+									a#spot.btn.green.lighten-2(href="/emoplaylist") Spot-I-See
+									a#jam.btn.green.lighten-2(href="/makemusic") Make some music!
+							
+							ul#nav-mobile.side-nav
+											li
+												a(href='#') Navbar Link
+							|  
+							a.button-collapse(href='#', data-activates='nav-mobile')
+								i.material-icons menu
 
 
 		row.center
-			h4 I made a sick beat! play around with the loops mayne
-			form
-				button#button-loop-1(type='button', value='1')  synth bass
-					img.loopbox(src='synthbass.png')
-					
-				button#button-loop-2(type='button', value='2') beat
-					img.loopbox(src='drum.png')
-				button#button-loop-3(type='button', value='3') perc
-					img#loopbox(src='perc.png')
-				button#button-loop-4(type='button', value='4') plucks
-					img#loopbox(src='plucks.png')
-				button#button-loop-5(type='button', value='5') pad
-					img#loopbox(src='pad.png')
-				button#button-loop-6(type='button', value='6') secret
-					img#loopbox(src='lloyd.png')
-
+			.loops
+				h4 A beat fell from the sky! Play with the loops using your keyboard or by clicking on them. Have fun! 
+				
+				button.mscbtn#button-loop-1(type='button', value='1')
+					kbd A
+					span.soundname kick
+					//- img.loopbox(src='synthbass.png')
+				button.mscbtn#button-loop-2(type='button', value='2')
+					kbd S
+					span.soundname pad
+					//- img.loopbox(src='drum.png')
+				button.mscbtn#button-loop-3(type='button', value='3')
+					kbd D
+					span.soundname perc
+					//- img#loopbox(src='perc.png')
+				button.mscbtn#button-loop-4(type='button', value='4')
+					kbd F
+					span.soundname lo-fi pluck
+					//- img#loopbox(src='plucks.png')
+				button.mscbtn#button-loop-5(type='button', value='5')
+					kbd G
+					span.soundname bass
+					//- img#loopbox(src='pad.png')
+				//- button#button-loop-6(type='button', value='6') secret
+				//- 	img#loopbox(src='lloyd.png')
+		
+				
 			.container-bottom2
 						div(id="bottom2")
 							h8.center-align 
@@ -52,12 +64,12 @@ html
 		script(type='text/javascript' src='https://code.jquery.com/jquery-3.2.1.min.js')
 		script
 			include music.js
+			
 		//- /- jQuery
 		script.
 			$(document).ready(function () {
-				$('#button-loop-6').hide()
+				$('.mscbtn').click(function() {
+			    $(this).toggleClass('playing');
+				});
 
-			$('#button-loop-5').on('click', function ()	{
-				$('#button-loop-6').show()
-			});
 			});
