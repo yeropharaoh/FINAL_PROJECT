@@ -19,16 +19,13 @@ const fileUpload = require('express-fileupload');
 // default options
 app.use(fileUpload());
 
-
-
-
-
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(__dirname + '/public'))
 	.use(cookieParser());
 
 app.set('views', './views');
 app.set('view engine', 'pug');
+app.set('port', (process.env.PORT || 5000));
 
 app.get('/', (request, response)=>{
 	response.render('index')
@@ -218,7 +215,10 @@ app.get('/makemusic', (request, response)=>{
 	response.render('makemusic')
 });
 
-app.listen(4000, function() {
-    console.log('Listening on port 4000');
-});
+// app.listen(4000, function() {
+//     console.log('Listening on port 4000');
+// });
 
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
