@@ -1,5 +1,4 @@
 // Audio Object
-//--------------
 var audio = {
     buffer: {},
     compatibility: {},
@@ -16,7 +15,6 @@ var audio = {
 };
 
 // Setup Audio Files and Buttons
-//-------------------------------
 for (var a in audio.files) {
     (function() {
         var i = parseInt(a) + 1;
@@ -72,7 +70,7 @@ audio.play = function(n) {
             If your sound is 10 seconds long, your offset 5 and duration 10 then the sound will play from the start instead of the offset.
             */
 
-            // Now queue up our looping sound to start immediatly after the source_once audio plays.
+            // Queue up our looping sound to start immediatly after the source_once audio plays.
             audio.source_loop[n][audio.compatibility.start](audio.context.currentTime + (audio.buffer[n].duration - offset));
         } else {
             audio.source_loop[n][audio.compatibility.start](0, offset);
@@ -117,10 +115,7 @@ audio.findSync = function(n) {
     return offset;
 };
 
-
-
 //Check Web Audio API Support
-//-----------------------------
 try {
     window.AudioContext = window.AudioContext || window.webkitAudioContext;
     audio.context = new window.AudioContext();
@@ -148,7 +143,7 @@ if (audio.proceed) {
     })();
 }; 
 
-//KEYS
+//KEYBOARD SHORTCUTS
  document.onkeyup=function(e){
   var e = e || window.event;
   if(e.which == 65) {
