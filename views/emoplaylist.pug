@@ -52,8 +52,6 @@ html
 		//- jQuery
 		script(src='https://code.jquery.com/jquery-3.2.1.min.js')
 		script.
-			
-
 			$('#submitbutton1').on('click', function(){
 			console.log('something')
 			
@@ -64,42 +62,35 @@ html
 					url: playlist.playlist,
 					method: 'GET',
 					headers: {'Authorization': 'Bearer' + token}
-					//- dataType: 'json',
-					//- data: {
-					//- 	type: 'artist',
-					//- 	q: artist
-					//- }
 				});
 
-				$.post('/search', { imageurl: image, access_token: token}, (result) => {
-				console.log(result)
-					getPlaylist(result);
-					$('#imageholder').html('<img src="' + result.image + '" />' + '<h4 style="color: white">THE STRONGEST EMOTION IS..... ' + result.emotion + '</h4>')
-					if(result.emotion === "neutral") {
-						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/lSU1eFxgr68" frameborder="0" allowfullscreen></iframe>')
-					}
-					if(result.emotion === "sadness") {
-						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/xzILUpaTtbc" frameborder="0" allowfullscreen></iframe>')
-					}
-					if(result.emotion === "happiness") {
-						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/mOQ2ygK47Cs" frameborder="0" allowfullscreen></iframe>') 
-					}
-					if(result.emotion === "anger") {
-						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/1qKS51qh4OY" frameborder="0" allowfullscreen></iframe>') 
-					}
-					if(result.emotion === "fear") {
-						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/mlTRcMowLkc" frameborder="0" allowfullscreen></iframe>') 
-					}
-					if(result.emotion === "surprise") {
-						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/Wp0a_xxttyA" frameborder="0" allowfullscreen></iframe>') 
-					}
-					if(result.emotion === "contempt") {
-						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/E_lpOJRIKgE" frameborder="0" allowfullscreen></iframe>') 
-					}
-					if(result.emotion === "disgust") {
-						$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/ZGnfxUGGWr0" frameborder="0" allowfullscreen></iframe>') 
-					}
-
-					
-				});
+			$.post('/search', { imageurl: image, access_token: token}, (result) => {
+			console.log(result)
+				getPlaylist(result);
+				$('#imageholder').html('<img src="' + result.image + '" />' + '<h4 style="color: white">THE STRONGEST EMOTION IS..... ' + result.emotion + '</h4>')
+				if(result.emotion === "neutral") {
+					$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/lSU1eFxgr68" frameborder="0" allowfullscreen></iframe>')
+				}
+				if(result.emotion === "sadness") {
+					$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/xzILUpaTtbc" frameborder="0" allowfullscreen></iframe>')
+				}
+				if(result.emotion === "happiness") {
+					$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/mOQ2ygK47Cs" frameborder="0" allowfullscreen></iframe>') 
+				}
+				if(result.emotion === "anger") {
+					$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/1qKS51qh4OY" frameborder="0" allowfullscreen></iframe>') 
+				}
+				if(result.emotion === "fear") {
+					$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/mlTRcMowLkc" frameborder="0" allowfullscreen></iframe>') 
+				}
+				if(result.emotion === "surprise") {
+					$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/Wp0a_xxttyA" frameborder="0" allowfullscreen></iframe>') 
+				}
+				if(result.emotion === "contempt") {
+					$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/E_lpOJRIKgE" frameborder="0" allowfullscreen></iframe>') 
+				}
+				if(result.emotion === "disgust") {
+					$('#spotifyholder').html('<h5 style="color: white">And here is a matching Youtube mix!' + '</h5>' + '<iframe width="560" height="315" src="https://www.youtube.com/embed/ZGnfxUGGWr0" frameborder="0" allowfullscreen></iframe>') 
+				}
 			});
+		});
