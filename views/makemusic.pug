@@ -26,7 +26,6 @@ html
 							a.button-collapse(href='#', data-activates='nav-mobile')
 								i.material-icons menu
 
-
 		row.center
 			.loops
 				h4 A beat fell from the sky! Play with the loops using your keyboard or by clicking on them. Have fun! 
@@ -34,42 +33,36 @@ html
 				button.mscbtn#button-loop-1(type='button', value='1')
 					kbd A
 					span.soundname kick
-					//- img.loopbox(src='synthbass.png')
+					
 				button.mscbtn#button-loop-2(type='button', value='2')
 					kbd S
 					span.soundname pad
-					//- img.loopbox(src='drum.png')
+					
 				button.mscbtn#button-loop-3(type='button', value='3')
 					kbd D
 					span.soundname perc
-					//- img#loopbox(src='perc.png')
+					
 				button.mscbtn#button-loop-4(type='button', value='4')
 					kbd F
 					span.soundname lo-fi pluck
-					//- img#loopbox(src='plucks.png')
+					
 				button.mscbtn#button-loop-5(type='button', value='5')
 					kbd G
 					span.soundname bass
-					//- img#loopbox(src='pad.png')
-				//- button#button-loop-6(type='button', value='6') secret
-				//- 	img#loopbox(src='lloyd.png')
-		
-				
+
 			.container-bottom2
-						div(id="bottom2")
-							h8.center-align 
+				div(id="bottom2")
+					h8.center-align 
 			
 
-		//jQuery
 		script(type='text/javascript' src='https://code.jquery.com/jquery-3.2.1.min.js')
 		script
 			include music.js
 			
-		//- /- jQuery
+		//- jQuery
 		script.
 			$(document).ready(function () {
 				$('.mscbtn').click(function() {
 			    $(this).toggleClass('playing');
 				});
-
 			});
